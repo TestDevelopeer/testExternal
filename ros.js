@@ -7,6 +7,6 @@ let scales = [
   }
 ];
 
-$(document).on('input change', '#form2-servicename', function(){
+$(document).on('focusout', '#form2-servicename', function(){
   console.log($(this).val());
 });
