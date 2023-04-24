@@ -24,5 +24,9 @@ $(document).on('focusout', '#form2-servicename', function(){
     }
   }
   let desc = returnDesc(scale.weight, scale.length, scale.type);
+  $('#form2-servicenameen').val('-');
   $('#form2-description').text(desc);
+  $('#select2-form2-okeiid-container').click();
+  $('.select2-search--dropdown .select2-search__field').val('642');
+  $('#select2-form2-okeiid-results li:first').click();
 });
