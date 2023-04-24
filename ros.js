@@ -89,6 +89,11 @@ setSelect2Value('#form2-okeiid', '.select2-search--dropdown .select2-search__fie
                       }
                       $('.js-input-plus')[0].click();
                       $('#form211-0-namedescription').val('Минимальная нагрузка')
+                      setSelect2Value('#form211-0-okeiid', '.select2-search--dropdown .select2-search__field', '166').then(
+                        result => {
+                          $('#form211-0-value').val(scale.weight < 80 ? '400' : '1000');
+                        }
+                      )
                     }, 500);
                   }
                 )
