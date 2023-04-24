@@ -24,5 +24,5 @@ $(document).on('focusout', '#form2-servicename', function(){
     }
   }
   let desc = returnDesc(scale.weight, scale.length, scale.type);
-  console.log(desc);
+  $('#form2-description').text(desc);
 });
