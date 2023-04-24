@@ -3,7 +3,8 @@ let scales = [
     name: 'Весы автомобильные в приямке АСП-40-8-1-П Цифровые датчики Kelli (Китай), Zemic (США)',
     weight: 40,
     length: 8,
-    type: 'Весы автомобильные в приямке'
+    type: 'Весы автомобильные в приямке',
+    sensors: 'Китай, США'
   },
   {
     name: 'Весы автомобильные в приямке АСП-40-8-1-П Цифровые датчики HBM (Германия)'
@@ -92,6 +93,28 @@ setSelect2Value('#form2-okeiid', '.select2-search--dropdown .select2-search__fie
                       setSelect2Value('#form211-0-okeiid', '.select2-search--dropdown .select2-search__field', '166').then(
                         result => {
                           $('#form211-0-value').val(scale.weight < 80 ? '400' : '1000');
+                          $('.js-input-plus')[0].click();
+                          $('#form211-0-namedescription').val('Максимальная нагрузка')
+                          setSelect2Value('#form211-1-okeiid', '.select2-search--dropdown .select2-search__field', '168').then(
+                            result => {
+                              $('#form211-1-value').val(scale.weight);
+                              $('.js-input-plus')[0].click();
+                              $('#form211-0-namedescription').val('Страна-производитель датчиков')
+                              setSelect2Value('#form211-2-okeiid', '.select2-search--dropdown .select2-search__field', '0 Нет').then(
+                                result => {
+                                  $('#form211-2-value').val(scale.sensors);
+                                  $('.js-input-plus')[0].click();
+                                  $('#form211-0-namedescription').val('Класс точности датчиков')
+                                  setSelect2Value('#form211-3-okeiid', '.select2-search--dropdown .select2-search__field', '0 Нет').then(
+                                    result => {
+                                      $('#form211-2-value').val('С3');
+                                      $('#navResp_3-tab').click();
+                                    }
+                                  )
+                                }
+                              )
+                            }
+                          )
                         }
                       )
                     }, 500);
