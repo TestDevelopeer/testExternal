@@ -1,3 +1,6 @@
+let gost = "ГОСТ OIML R 76-1-2011";
+let tu = "ТУ -26.51.6-001-21450500-2021";
+
 let scales = [
   {
     name: 'Весы автомобильные в приямке АСП-40-8-1-П Цифровые датчики Kelli (Китай), Zemic (США)',
@@ -113,6 +116,8 @@ setSelect2Value('#form2-okeiid', '.select2-search--dropdown .select2-search__fie
                                     result => {
                                       $('#form211-3-value').val('С3');
                                       $('#navResp_3-tab').click();
+                                      $('#form2-designationstandard').val(gost);
+                                      $('#form2-designationtechservice').val(tu);
                                     }
                                   )
                                   }, 500)
