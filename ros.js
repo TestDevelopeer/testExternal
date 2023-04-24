@@ -75,7 +75,24 @@ setSelect2Value('#form2-okeiid', '.select2-search--dropdown .select2-search__fie
             result => {
               setSelect2Value('#form2-industryid', '.select2-search--inline .select2-search__field', 'Сельско').then(
                   result => {
-                    $('#form2-industrialplatformid option[value=17718127]').attr('selected','selected');
+                    $('#form2-industrialplatformid option[value=17718127]').attr('selected','selected').then(
+                      result => {
+                        $('#navResp_2-tab').click();
+                        $('#form2-agreektru').children('label').eq(1).click();
+                        $('#form2-noktrureason').children('label').eq(0).click();
+                        setTimeout(function() {
+                          $('#form2okpdspec-0-value').val(3);
+                          $('.js-input-remove')[1].click();
+                          for (let i = 1; i <= 17; i++) {
+                            if ($('.js-input-remove')[1]) {
+                              $('.js-input-remove')[1].click();
+                            }
+                          }
+                          $('.js-input-plus')[0].click();
+                          $('#form211-0-namedescription').val('Минимальная нагрузка')
+                        }, 500);
+                      }
+                    );
                   }
                 )
             }
